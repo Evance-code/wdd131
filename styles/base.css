@@ -1,0 +1,134 @@
+:root {
+    --primary: #003049;
+    --accent: #fcbf49;
+    --light: #f8f9fa;
+    --dark: #343a40;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #fff;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+header span {
+    color: var(--accent);
+}
+
+nav {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    gap: 12rem;
+    /* Increased gap between links */
+    padding: 1rem 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card.about,
+.card.resources {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Display cards side by side on wide screens */
+@media (min-width: 900px) {
+    main {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .card.about,
+    .card.resources {
+        flex: 1;
+    }
+}
+
+.about-content {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-content>img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.flag-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.flag-info img {
+    height: 60px;
+    width: auto;
+}
+
+.resources ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.resources a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
