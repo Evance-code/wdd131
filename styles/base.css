@@ -37,8 +37,8 @@ nav {
     background-color: #222;
     display: flex;
     justify-content: center;
-    gap: 12rem;
-    /* Increased gap between links */
+    gap: 3rem;
+    flex-wrap: wrap;
     padding: 1rem 0;
 }
 
@@ -77,7 +77,6 @@ main {
     max-width: 500px;
 }
 
-/* Display cards side by side on wide screens */
 @media (min-width: 900px) {
     main {
         flex-wrap: nowrap;
