@@ -1,0 +1,79 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    /* header | nav | main | footer */
+    min-height: 100vh;
+    font-family: Georgia, serif;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    /* dark gray */
+    color: white;
+    padding: 1.25rem;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    background-color: #000;
+    /* black */
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    /* evenly spaced links */
+    list-style: none;
+    padding: 0.75rem 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Layout */
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* main | aside */
+    flex: 1;
+}
+
+/* Section (Main Content) */
+section {
+    background-color: #ccc;
+    /* light gray */
+    padding: 1rem;
+}
+
+/* Aside (Sidebar) */
+aside {
+    background-color: #fff;
+    /* white */
+    padding: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    /* dark gray */
+    color: white;
+    text-align: center;
+    padding: 1.25rem;
+    font-weight: bold;
+}
