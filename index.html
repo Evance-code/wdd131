@@ -1,11 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals, Evance Katanga, Portfolio and project work">
+    <meta name="author" content="Evance Katanga">
+    <title>WDD 131 – Dynamic Web Fundamentals – Evance Katanga</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
 </head>
+
 <body>
-   <h1>WDD 131 - Evance</h1> 
+    <header>
+        <div class="header-content">
+            <span id="course-title">WDD 131 – Dynamic Web Fundamentals – Evance H. Katanga</span>
+            <nav>
+                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://byupw.instructure.com/"><i class="fas fa-graduation-cap"></i> Canvas</a>
+                <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7"><i
+                        class="fas fa-book"></i> Scripture</a>
+                <a href="#"><i class="fas fa-folder"></i> Final Project</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Evance Katanga</h1>
+
+        <div class="card-container">
+            <section class="card">
+                <h2><i class="fas fa-user"></i> About Me</h2>
+                <div class="card-content">
+                    <div class="profile">
+                        <img src="images/Profile.jpg" alt="Evance Katanga" class="profile-img">
+                        <div class="profile-text">
+                            <p>Hello! My name is Evance Katanga, and I am from Dar es Salaam, Tanzania. I am a web
+                                development student with a passion for creating interactive and user-friendly websites.
+                            </p>
+                            <p>I enjoy solving complex problems and turning ideas into reality through code. When I'm
+                                not programming, I love hiking, reading technology blogs, and exploring new places.</p>
+                            <p>I believe in continuous learning and improvement, which is why I'm excited to be taking
+                                this Dynamic Web Fundamentals course.</p>
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="country-info">
+                        <h3><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</h3>
+                        <div class="country-content">
+                            <img src="images/Tanzaniaflag.jpg" alt="Tanzania Flag" class="flag">
+                            <p>Tanzania is an East African country known for its vast wilderness areas. They include the
+                                plains of Serengeti National Park, a safari mecca populated by the "big five" game
+                                (elephant, lion, leopard, buffalo, rhino), and Kilimanjaro National Park, home to
+                                Africa's highest mountain. Offshore lie the tropical islands of Zanzibar, with Arabic
+                                influences, and Mafia, with a marine park home to whale sharks and coral reefs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2><i class="fas fa-code"></i> Web Dev Resources</h2>
+                <div class="card-content">
+                    <ul class="resources-list">
+                        <li><a href="https://www.w3schools.com/"><i class="fas fa-link"></i> W3Schools</a></li>
+                        <li><a href="https://developer.mozilla.org/"><i class="fas fa-link"></i> MDN Web Docs</a></li>
+                        <li><a href="https://css-tricks.com/"><i class="fas fa-link"></i> CSS-Tricks</a></li>
+                        <li><a href="https://stackoverflow.com/"><i class="fas fa-link"></i> Stack Overflow</a></li>
+                        <li><a href="https://www.freecodecamp.org/"><i class="fas fa-link"></i> freeCodeCamp</a></li>
+                        <li><a href="https://github.com/"><i class="fas fa-link"></i> GitHub</a></li>
+                        <li><a href="https://codepen.io/"><i class="fas fa-link"></i> CodePen</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="currentyear"></span> ❤ Evance Katanga ❤ Tanzania</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
 </body>
+
 </html>
