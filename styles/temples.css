@@ -1,0 +1,55 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Use Google Fonts */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #004466;
+    color: white;
+}
+
+#menu {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.navigation {
+    display: none;
+    flex-direction: column;
+}
+
+.navigation a {
+    padding: 0.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation a:hover {
+    background: #006699;
+}
+
+.album {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 8px;
+}
