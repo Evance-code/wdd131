@@ -1,20 +1,15 @@
-@media (min-width: 768px) {
+@media screen and (min-width: 32rem) {
     #menu {
         display: none;
     }
 
     .navigation {
-        display: flex !important;
+        display: flex;
         flex-direction: row;
         gap: 1rem;
     }
 
-    .album {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    main {
-        max-width: 1000px;
-        margin: 0 auto;
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

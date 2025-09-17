@@ -1,55 +1,79 @@
+/* General styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    /* Use Google Fonts */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* Header */
 header {
+    background-color: purple;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background: #004466;
-    color: white;
+}
+
+header h1 {
+    margin: 0;
 }
 
 #menu {
-    font-size: 1.5rem;
     background: none;
     border: none;
     color: white;
-    cursor: pointer;
+    font-size: 2rem;
+    display: block;
 }
 
 .navigation {
     display: none;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 .navigation a {
-    padding: 0.5rem;
-    text-decoration: none;
     color: white;
+    text-decoration: none;
 }
 
 .navigation a:hover {
-    background: #006699;
+    text-decoration: underline;
 }
 
-.album {
+/* Main */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.gallery {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 1rem;
 }
 
 figure {
     margin: 0;
-    text-align: center;
 }
 
-figure img {
-    width: 100%;
-    border-radius: 8px;
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 1rem;
 }
