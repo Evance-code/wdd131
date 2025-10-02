@@ -1,63 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tanzania</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Discover Tanzania — Mount Kilimanjaro, country facts, and current weather." />
+    <title>Tanzania — Country Page</title>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles/sas.css" />
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="hero-header">
-        <h1>🇹🇿 Discover Tanzania</h1>
+    <header class="site-header" role="banner" aria-label="Tanzania header">
+        <div class="header-inner">
+            <h1 class="site-title">Tanzania</h1>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-image">
-        <div class="hero-overlay"></div>
+    <main>
+        <!-- HERO: picture element (responsive image swap using WebP) -->
+        <section class="hero" role="region" aria-label="Mount Kilimanjaro hero">
+            <picture class="hero-picture" aria-hidden="true">
+                <!-- Desktop / large -->
+                <source srcset="images/Kiliiimanjaro" media="(min-width:768px)" type="image/webp">
+                <!-- Mobile / small -->
+                <source srcset="images/Kiliiimanjaro" media="(max-width:767px)" type="image/webp">
+                <!-- Fallback -->
+                <img src="images/Kiliiimanjaro.avif" alt="Mount Kilimanjaro rising above clouds" class="hero-img"
+                    decoding="async" width="1600" height="900">
+            </picture>
 
-        <!-- Intro Text -->
-        <div class="hero-text">
-            <h2>Mount Kilimanjaro</h2>
-            <p>The Roof of Africa — Explore the beauty of Tanzania</p>
-        </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
 
-        <!-- Data Card -->
-        <div class="info-card data-card">
-            <div class="card-title">Country Data</div>
-            <p><strong>Area:</strong> 945,087 sq km</p>
-            <p><strong>Population:</strong> 65,497,748</p>
-            <p><strong>Capital:</strong> Dodoma</p>
-            <p><strong>Languages:</strong> Swahili, English</p>
-            <p><strong>Currency:</strong> Tanzanian Shilling (TZS)</p>
-            <p><strong>Time Zone:</strong> UTC+3</p>
-            <p><strong>Calling Code:</strong> +255</p>
-            <p><strong>Internet TLD:</strong> .tz</p>
-        </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 id="hero-title">Mount Kilimanjaro</h2>
+                    <p class="hero-sub">The Roof of Africa — Explore the beauty of Tanzania</p>
+                </div>
 
-        <!-- Weather Card -->
-        <div class="info-card weather-card">
-            <div class="card-title">
-                Weather <span class="weather-icon">🌤️</span>
+                <aside class="cards" aria-label="Country data and weather">
+                    <!-- Country Data -->
+                    <section class="card data-card" aria-labelledby="data-title">
+                        <div class="card-title" id="data-title">Data</div>
+                        <p><strong>Area:</strong> 945,087 sq km</p>
+                        <p><strong>Population:</strong> 65,497,748</p>
+                        <p><strong>Capital:</strong> Dodoma</p>
+                        <p><strong>Languages:</strong> Swahili, English</p>
+                        <p><strong>Currency:</strong> Tanzanian Shilling (TZS)</p>
+                        <p><strong>Time Zone:</strong> UTC+3</p>
+                        <p><strong>Calling Code:</strong> +255</p>
+                        <p><strong>Internet TLD:</strong> .tz</p>
+                    </section>
+
+                    <!-- Weather Card -->
+                    <section class="card weather-card" aria-labelledby="weather-title">
+                        <div class="card-title" id="weather-title">Weather
+                            <!-- Inline SVG (present in DOM). CSS will show it only on mobile. -->
+                            <span class="svg-weather" aria-hidden="true">
+                                <svg viewBox="0 0 64 64" width="36" height="36" xmlns="http://www.w3.org/2000/svg"
+                                    role="img" aria-label="partly cloudy icon">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2">
+                                        <circle cx="20" cy="18" r="6" fill="currentColor"></circle>
+                                        <path d="M38 36a10 10 0 0 0-20 0" stroke="#4A5568" fill="#E6E6E6"></path>
+                                        <path d="M26 42h18a6 6 0 0 0 0-12" stroke="#4A5568" fill="#fff"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+
+                        <p><strong>Temperature:</strong> <span id="temp-c">28</span> °C</p>
+                        <p><strong>Conditions:</strong> Sunny</p>
+                        <p><strong>Wind:</strong> <span id="wind-kmh">12</span> km/h</p>
+
+                        <!-- Wind chill output inserted by JS (aria-live for screen readers) -->
+                        <div id="wind-chill" aria-live="polite" class="wind-chill-output"></div>
+                    </section>
+                </aside>
             </div>
-            <p><strong>Temperature:</strong> 28 °C</p>
-            <p><strong>Conditions:</strong> Sunny</p>
-            <p><strong>Wind:</strong> 12 km/h</p>
-            <p><strong>Wind Chill:</strong> 27.5 °C</p>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>©<span id="year"></span> 🌸 Evance Katanga 🌸 Tanzania</p>
-        <p class="last-modified"></p>
+    <footer role="contentinfo" class="site-footer">
+        <p>© <span id="year"></span> 🌸 Evance Katanga 🌸 Tanzania</p>
+        <p id="last-modified" class="last-modified"></p>
     </footer>
 
-    <script src="scripts/vvv.js"></script>
+    <script src="scripts/vvv.js" defer></script>
 </body>
 
 </html>
