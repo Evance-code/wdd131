@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple Album</title>
-    <link rel="stylesheet" href="styles/btemplessmall.css">
+    <title>Filtered Temples</title>
     <link rel="stylesheet" href="styles/btempleslarge.css">
-    <script defer src="scripts/btemple.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>Temple Album</h1>
-        <button id="menu" aria-label="Menu">☰</button>
+        <h1>Temple Gallery</h1>
+        <button id="menu">☰</button>
         <nav class="navigation">
             <a href="#">Home</a>
             <a href="#">Old</a>
@@ -24,17 +22,16 @@
     </header>
 
     <main>
-        <h1>Home</h1>
-        <section class="gallery">
-            <figure>
-
-        </section>
+        <h2>Temples</h2>
+        <!-- Cards will be generated here -->
+        <section id="temple-cards" class="gallery"></section>
     </main>
 
     <footer>
-        <p>&copy;<span id="year"></span> 🌸 Evance Katanga 🌸 Tanzania</p>
-        <p>Last Modification: <span id="lastModified"></span></p>
+        <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
     </footer>
+
+    <script src="scripts/btemple.js"></script>
 </body>
 
 </html>

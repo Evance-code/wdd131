@@ -1,3 +1,90 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: purple;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    display: block;
+}
+
+.navigation {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Main */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.temple-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.temple-card h2 {
+    margin-top: 0;
+    color: purple;
+}
+
+.temple-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive */
 @media screen and (min-width: 32rem) {
     #menu {
         display: none;
