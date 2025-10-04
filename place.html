@@ -16,9 +16,9 @@
 
 <body>
     <header class="site-header" role="banner" aria-label="Tanzania header">
-        <div class="header-inner">
-            <h1 class="site-title">Tanzania</h1>
-        </div>
+
+        <h1 class="site-title">Tanzania</h1>
+
     </header>
 
     <main>
@@ -26,15 +26,15 @@
         <section class="hero" role="region" aria-label="Mount Kilimanjaro hero">
             <picture class="hero-picture" aria-hidden="true">
                 <!-- Desktop / large -->
-                <source srcset="images/Kiliiimanjaro" media="(min-width:768px)" type="image/webp">
+                <source src="images/Kiliiimanjaro.avif" media="(min-width:768px)" type="image/webp">
                 <!-- Mobile / small -->
-                <source srcset="images/Kiliiimanjaro" media="(max-width:767px)" type="image/webp">
+                <source src="images/Kiliiimanjaro.avif" media="(max-width:767px)" type="image/webp">
                 <!-- Fallback -->
                 <img src="images/Kiliiimanjaro.avif" alt="Mount Kilimanjaro rising above clouds" class="hero-img"
                     decoding="async" width="1600" height="900">
             </picture>
 
-            <div class="hero-overlay" aria-hidden="true"></div>
+
 
             <div class="hero-content">
                 <div class="hero-text">
@@ -42,7 +42,7 @@
                     <p class="hero-sub">The Roof of Africa — Explore the beauty of Tanzania</p>
                 </div>
 
-                <aside class="cards" aria-label="Country data and weather">
+                <div class="cards" aria-label="Country data and weather">
                     <!-- Country Data -->
                     <section class="card data-card" aria-labelledby="data-title">
                         <div class="card-title" id="data-title">Data</div>
@@ -80,7 +80,7 @@
                         <!-- Wind chill output inserted by JS (aria-live for screen readers) -->
                         <div id="wind-chill" aria-live="polite" class="wind-chill-output"></div>
                     </section>
-                </aside>
+                </div>
             </div>
         </section>
     </main>

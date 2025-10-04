@@ -58,14 +58,14 @@ const temples = [
         imageUrl:
             "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-    // Extra temples
+    // Extra temples (you should verify the URLs)
     {
         templeName: "Salt Lake Utah",
         location: "Salt Lake City, Utah, United States",
         dedicated: "1893, April, 6",
         area: 253015,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-utah/400x250/salt-lake-temple-lds-918442-wallpaper.jpg"
+            "https://www.churchofjesuschrist.org/media/collection/salt-lake-utah-temple-images?lang=eng"  // replace with direct JPG/PNG link
     },
     {
         templeName: "Rome Italy",
@@ -73,7 +73,7 @@ const temples = [
         dedicated: "2019, March, 10",
         area: 41010,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-2019.jpg"
+            "https://www.churchofjesuschrist.org/media/collection/rome-italy-temple-images?lang=eng"  // replace with direct link
     },
     {
         templeName: "Accra Ghana",
@@ -81,7 +81,7 @@ const temples = [
         dedicated: "2004, January, 11",
         area: 17500,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/accra-ghana/400x250/accra-ghana-temple-lds-612777-wallpaper.jpg"
+            "https://www.churchofjesuschrist.org/media/collection/accra-ghana-temple-images?lang=eng"  // replace with direct link
     }
 ];
 
@@ -90,12 +90,15 @@ const temples = [
 // ============================
 const cardsContainer = document.querySelector("#temple-cards");
 const navLinks = document.querySelectorAll(".navigation a");
+const menuButton = document.getElementById("menu");
+const nav = document.querySelector(".navigation");
 
 // ============================
 // Functions
 // ============================
 function displayTemples(list) {
-    cardsContainer.innerHTML = ""; // Clear container
+    // Clear out any previous content
+    cardsContainer.innerHTML = "";
 
     list.forEach(temple => {
         const card = document.createElement("div");
@@ -106,73 +109,95 @@ function displayTemples(list) {
       <p><strong>Location:</strong> ${temple.location}</p>
       <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
       <p><strong>Size:</strong> ${temple.area.toLocaleString()} sq ft</p>
-      <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+      <img src="${temple.imageUrl}" alt="Photo of ${temple.templeName}" loading="lazy">
     `;
 
         cardsContainer.appendChild(card);
     });
 }
 
-// Helper: extract year
-function getYear(dedicated) {
-    return parseInt(dedicated.split(",")[0]);
+// Helper: get year from the dedicated string
+function getYear(dedicatedStr) {
+    // assumes format "YYYY, Month, Day"
+    const parts = dedicatedStr.split(",");
+    const year = parseInt(parts[0]);
+    return year;
 }
 
-// Filters
+// Filter functions
 function showAll() {
     displayTemples(temples);
 }
 
 function showOld() {
-    displayTemples(temples.filter(t => getYear(t.dedicated) < 1900));
+    const filtered = temples.filter(t => getYear(t.dedicated) < 2000);
+    displayTemples(filtered);
 }
 
 function showNew() {
-    displayTemples(temples.filter(t => getYear(t.dedicated) > 2000));
+    const filtered = temples.filter(t => getYear(t.dedicated) > 2000);
+    displayTemples(filtered);
 }
 
 function showLarge() {
-    displayTemples(temples.filter(t => t.area > 90000));
+    const filtered = temples.filter(t => t.area > 100000);
+    displayTemples(filtered);
 }
 
 function showSmall() {
-    displayTemples(temples.filter(t => t.area < 10000));
+    const filtered = temples.filter(t => t.area < 100000);
+    displayTemples(filtered);
 }
 
 // ============================
-// Event Listeners for Nav
+// Event Listeners
 // ============================
+// Navigation filter clicks
 navLinks.forEach(link => {
-    link.addEventListener("click", e => {
+    link.addEventListener("click", (e) => {
         e.preventDefault();
-        const choice = e.target.textContent;
+        const choice = e.target.textContent.trim();
 
-        if (choice === "Home") showAll();
-        if (choice === "Old") showOld();
-        if (choice === "New") showNew();
-        if (choice === "Large") showLarge();
-        if (choice === "Small") showSmall();
+        switch (choice) {
+            case "Home":
+                showAll();
+                break;
+            case "Old":
+                showOld();
+                break;
+            case "New":
+                showNew();
+                break;
+            case "Large":
+                showLarge();
+                break;
+            case "Small":
+                showSmall();
+                break;
+            default:
+                showAll();
+        }
     });
 });
 
-// ============================
-// Initialize
-// ============================
-showAll();
+// Hamburger menu toggle
+menuButton.addEventListener("click", () => {
+    if (nav.style.display === "flex") {
+        nav.style.display = "none";
+        menuButton.textContent = "☰";
+    } else {
+        nav.style.display = "flex";
+        menuButton.textContent = "✖";
+    }
+});
 
 // ============================
-// Footer dynamic year & last modified
+// Initialize page
+// ============================
+showAll();  // Display all temples by default
+
+// ============================
+// Footer dynamic year and last modified
 // ============================
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
-
-// ============================
-// Hamburger menu
-// ============================
-const menuButton = document.getElementById("menu");
-const nav = document.querySelector(".navigation");
-
-menuButton.addEventListener("click", () => {
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-    menuButton.textContent = nav.style.display === "flex" ? "✖" : "☰";
-});

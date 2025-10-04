@@ -19,44 +19,31 @@
     font-size: 16px;
 }
 
-/* Body */
-body {
-    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    color: #111827;
-    background: #fff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    line-height: 1.5;
-}
+
 
 /* Header */
 .site-header {
     background: linear-gradient(90deg, var(--tanz-green), var(--tanz-yellow), var(--tanz-blue), #000000);
-    color: #fff;
-    text-align: center;
+
+
     padding: 18px 12px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
-.header-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
 
 .site-title {
-    font-size: 1.6rem;
+    text-align: center;
+    font-size: 3rem;
     font-weight: 700;
     letter-spacing: 0.4px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    color: white;
 }
 
 /* HERO */
 .hero {
-    max-width: var(--max-width);
-    margin: 18px auto;
-    border-radius: 16px;
-    position: relative;
-    overflow: hidden;
+    max-width: cover(--max-width);
+
+
 }
 
 /* picture/img */
@@ -64,24 +51,18 @@ body {
 .hero-img {
     display: block;
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+
 }
 
-/* overlay to ensure legible text */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.28));
-    z-index: 1;
-}
+
 
 /* content on top of image */
 .hero-content {
     position: absolute;
     inset: 0;
     z-index: 2;
-    display: flex;
+    display: grid;
     justify-content: space-between;
     align-items: flex-end;
     gap: var(--gap);
@@ -112,17 +93,11 @@ body {
 }
 
 /* CARDS (stacked on mobile, column on desktop) */
-.cards {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    align-items: flex-end;
-}
 
 /* card base */
 .card {
     background: var(--card-bg);
-    border-radius: var(--radius);
+
     padding: 16px 18px;
     width: 300px;
     box-shadow: var(--shadow);
@@ -130,15 +105,27 @@ body {
     position: relative;
 }
 
+.card data-card {
+    position: absolute;
+    margin-right: 10px;
+}
+
+.card card weather-card {
+    position: end;
+    margin-right: 10px;
+}
+
 /* tab title */
+
+
 .card-title {
     position: absolute;
-    top: -20px;
+    top: 8px;
     left: -8px;
     background: linear-gradient(90deg, var(--tanz-green), #057a3a);
     color: #fff;
-    padding: 8px 14px;
-    border-radius: 8px;
+    padding: 8px 18px;
+
     font-weight: 600;
     font-size: 1rem;
 }
