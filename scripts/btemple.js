@@ -130,7 +130,7 @@ function showAll() {
 }
 
 function showOld() {
-    const filtered = temples.filter(t => getYear(t.dedicated) < 2000);
+    const filtered = temples.filter(t => getYear(t.dedicated) < 1900);
     displayTemples(filtered);
 }
 
@@ -140,12 +140,12 @@ function showNew() {
 }
 
 function showLarge() {
-    const filtered = temples.filter(t => t.area > 100000);
+    const filtered = temples.filter(t => t.area > 90000);
     displayTemples(filtered);
 }
 
 function showSmall() {
-    const filtered = temples.filter(t => t.area < 100000);
+    const filtered = temples.filter(t => t.area < 10000);
     displayTemples(filtered);
 }
 
