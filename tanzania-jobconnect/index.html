@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanzania Talent Connect - A Bridge to Executive Opportunities</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --tanzania-green: #1EB53A;
+            --tanzania-gold: #FCD116;
+            --tanzania-blue: #00A3DD;
+            --tanzania-black: #000000;
+            --tanzania-light: #f8f9fa;
+            --tanzania-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--tanzania-dark);
+            background-color: var(--tanzania-light);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--tanzania-black);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--tanzania-green);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--tanzania-blue);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--tanzania-gold);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            margin-left: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: var(--tanzania-green);
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: var(--tanzania-blue);
+            margin-bottom: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--tanzania-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--tanzania-green);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--tanzania-gold);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--tanzania-green);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--tanzania-blue);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero-button {
+            background-color: var(--tanzania-gold);
+            color: var(--tanzania-black);
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: var(--tanzania-green);
+            color: white;
+        }
+
+        .hero-button.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .hero-button.secondary:hover {
+            background-color: white;
+            color: var(--tanzania-black);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-light {
+            background-color: white;
+        }
+
+        .section-dark {
+            background-color: #f5f5f5;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            display: inline-block;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* What is Headhunting Section */
+        .headhunting-explained {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .headhunting-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .headhunting-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .headhunting-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-box {
+            background-color: var(--tanzania-blue);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--tanzania-green);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--tanzania-blue);
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            counter-reset: step-counter;
+            position: relative;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--tanzania-gold);
+            z-index: 1;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 1rem;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--tanzania-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        .process-step h3 {
+            color: var(--tanzania-blue);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--tanzania-green), var(--tanzania-blue));
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+        }
+
+        .cta-section h2:after {
+            background: var(--tanzania-gold);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--tanzania-black);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            color: var(--tanzania-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--tanzania-gold);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            margin-right: 10px;
+            color: var(--tanzania-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--tanzania-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul li {
+                margin-left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .process-steps:before {
+                display: none;
+            }
+
+            .process-step {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <!-- Simple logo using CSS -->
+                    <svg width="40" height="40" viewBox="0 0 40 40">
+                        <rect width="40" height="40" fill="#1EB53A" />
+                        <polygon points="0,0 40,0 0,40" fill="#00A3DD" />
+                        <polygon points="40,0 40,40 0,40" fill="#FCD116" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>Tanzania Talent Connect</h1>
+                    <p>A Bridge to Executive Opportunities</p>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="cta-button">Find Talent</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu">
+                <i>☰</i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Connecting Tanzania's Top Talent With Leading Organizations</h1>
+            <p>We specialize in executive search and talent acquisition, bringing global headhunting expertise to
+                Tanzania's growing market.</p>
+            <div class="hero-buttons">
+                <a href="#" class="hero-button">Find Top Talent</a>
+                <a href="#" class="hero-button secondary">Explore Opportunities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Headhunting Section -->
+    <section class="section-light" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>What is a Headhunter?</h2>
+                <p>Understanding our specialized approach to talent acquisition</p>
+            </div>
+
+            <div class="headhunting-explained">
+                <div class="headhunting-content">
+                    <p>A <strong>headhunter</strong> is a specialized professional who identifies, approaches, and
+                        recruits highly qualified individuals for specific executive, managerial, or technical roles.
+                    </p>
+
+                    <p>Unlike traditional recruiters who primarily review applications from job seekers, headhunters
+                        actively search for top talent—even when those professionals aren't actively looking for new
+                        opportunities.</p>
+
+                    <div class="highlight-box">
+                        <h3>Why Headhunting Matters in Tanzania</h3>
+                        <p>As Tanzania's economy grows and becomes more competitive, access to specialized talent
+                            becomes crucial for business success. Headhunting ensures organizations can find the right
+                            leaders to drive growth and innovation.</p>
+                    </div>
+
+                    <p>At <strong>Tanzania Talent Connect</strong>, we bring this global executive search approach to
+                        Tanzania, helping organizations discover exceptional leaders while providing talented
+                        professionals with rewarding opportunities that match their skills and ambitions.</p>
+                </div>
+
+                <div class="headhunting-image">
+                    <img src="https://images.unsplash.com/photo-1551836026-d5c8c2d6c0d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Professional networking in Tanzania">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-dark" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive talent solutions for Tanzania's evolving market</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👔</div>
+                    <h3>Executive Search</h3>
+                    <p>Identifying and recruiting C-level executives and senior management for leading organizations
+                        across Tanzania.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Talent Mapping</h3>
+                    <p>Comprehensive market analysis to identify potential candidates for current and future hiring
+                        needs.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Strategic Recruitment</h3>
+                    <p>Targeted approach to attract specialized professionals in high-demand sectors like technology,
+                        finance, and healthcare.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Market Intelligence</h3>
+                    <p>Insights on compensation trends, talent availability, and competitive landscape in Tanzania's job
+                        market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="section-light" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Headhunting Process</h2>
+                <p>How we connect top talent with exceptional opportunities</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Client Consultation</h3>
+                    <p>We begin by understanding your organization's needs, culture, and specific requirements for the
+                        role.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Talent Identification</h3>
+                    <p>Using our extensive network and research capabilities, we identify potential candidates who match
+                        your criteria.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Approach & Engagement</h3>
+                    <p>We confidentially approach qualified professionals to gauge interest and discuss the opportunity.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Presentation & Selection</h3>
+                    <p>We present the most suitable candidates and facilitate the interview and selection process.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Offer & Onboarding</h3>
+                    <p>We assist with offer negotiation and ensure a smooth transition for the selected candidate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Find Your Next Executive Leader?</h2>
+            <p>Contact Tanzania Talent Connect today to discuss how our headhunting expertise can help your organization
+                secure top-tier talent.</p>
+            <a href="#" class="hero-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tanzania Talent Connect</h3>
+                    <p>Your trusted partner for executive search and talent acquisition in Tanzania's growing market.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">ig</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Headhunting</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Executive Search</a></li>
+                        <li><a href="#">Talent Mapping</a></li>
+                        <li><a href="#">Leadership Assessment</a></li>
+                        <li><a href="#">Market Intelligence</a></li>
+                        <li><a href="#">Succession Planning</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Dar es Salaam, Tanzania</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>+255 123 456 789</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>info@tanzaniatalentconnect.co.tz</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tanzania Talent Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>

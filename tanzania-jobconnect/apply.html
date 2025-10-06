@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanzania JobConnect | Apply</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <img src="images/logo.png" alt="Tanzania JobConnect Logo" class="logo">
+            <h1 class="site-title">Tanzania JobConnect</h1>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="apply.html" class="active">Apply</a>
+                <a href="references.html">References</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="apply">
+            <h2>Submit Your Application</h2>
+            <form id="applicationForm">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="position">Position Applying For:</label>
+                <input type="text" id="position" required>
+
+                <label for="message">Why are you the best fit?</label>
+                <textarea id="message" rows="4"></textarea>
+
+                <button type="submit" class="btn">Submit Application</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tanzania JobConnect | WDD 131 BYU–Idaho</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+/* =====================
+   COLOR SCHEME
+===================== */
+:root {
+    --tanz-green: #006400;
+    --tanz-yellow: #ffd700;
+    --tanz-blue: #1e90ff;
+    --tanz-black: #000000;
+    --tanz-white: #ffffff;
+}
+
+/* =====================
+   GLOBAL STYLES
+===================== */
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    background-color: var(--tanz-white);
+    color: var(--tanz-black);
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+    padding: 2rem;
+    border: 3px solid var(--tanz-green);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    border-bottom: 3px solid var(--tanz-green);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+h1,
+h2 {
+    color: var(--tanz-green);
+    font-family: "Poppins", sans-serif;
+}
+
+h2 {
+    border-bottom: 2px solid var(--tanz-yellow);
+    padding-bottom: 0.3rem;
+}
+
+ul {
+    margin-left: 1.5rem;
+}
+
+.color-samples {
+    margin-top: 1rem;
+}
+
+.color-sample {
+    display: inline-block;
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.green {
+    background-color: var(--tanz-green);
+}
+
+.yellow {
+    background-color: var(--tanz-yellow);
+}
+
+.blue {
+    background-color: var(--tanz-blue);
+}
+
+.black {
+    background-color: var(--tanz-black);
+}
+
+.wireframes {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 2rem;
+    border-top: 2px solid var(--tanz-green);
+    padding-top: 1rem;
+}
