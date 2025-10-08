@@ -1,155 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Review Submitted — Confirmation</title>
-    <link rel="stylesheet" href="styles/cssstyles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Confirmation</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <script defer>
+        const counterKey = "reviewCount";
+        let count = localStorage.getItem(counterKey) || 0;
+        count++;
+        localStorage.setItem(counterKey, count);
+
+        window.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("counter").textContent = count;
+            document.getElementById("lastModified").textContent =
+                "Last Modification: " + document.lastModified;
+        });
+    </script>
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="brand">
-            <img src="assets/logo-placeholder.svg" alt="Site logo" width="72" height="72" loading="lazy">
-            <h1>Tanzania Product Reviews</h1>
-        </div>
-        <nav class="main-nav" aria-label="Main navigation">
-            <a href="form.html">Product Review</a>
-            <a href="review.html" class="active">Confirmation</a>
-            <a href="#">References</a>
-        </nav>
+    <header>
+        <h1>Thank You for Your Submission!</h1>
     </header>
 
-    <main class="container">
-        <h2>Submission Confirmation</h2>
-        <div id="confirmation" class="confirmation" aria-live="polite">
-            <!-- JS will populate confirmation details here -->
-        </div>
+    <main>
+        <section>
+            <p>Your product review has been submitted successfully.</p>
+            <p><strong>Total Reviews Submitted:</strong> <span id="counter"></span></p>
+        </section>
 
-        <div class="counter">
-            <p id="counterText">Reviews submitted on this browser: <strong id="reviewCount">0</strong></p>
-            <button id="resetCounter">Reset Counter</button>
-        </div>
-
-        <p><a href="form.html">Submit another review</a></p>
+        <a href="form.html" class="btn">Submit Another Review</a>
     </main>
 
-    <footer class="site-footer">
-        <p>© 2025 WDD131 — Your Name. <a href="references.html">References</a></p>
+    <footer>
+        <p>©2024 🌍 Evance Hosea Katanga 🌍 Tanzania</p>
+        <p id="lastModified"></p>
     </footer>
-
-    <script>
-        // Inline script for review.html to keep page self-contained
-        (function () {
-            // Parse query params
-            function getQueryParams() {
-                const params = new URLSearchParams(window.location.search);
-                const entries = {};
-                for (const [k, v] of params) {
-                    // For multiple checkbox values, URLSearchParams returns last or repeated ones; we'll collect all
-                    if (entries[k]) {
-                        if (Array.isArray(entries[k])) entries[k].push(v);
-                        else entries[k] = [entries[k], v];
-                    } else {
-                        entries[k] = v;
-                    }
-                }
-                return entries;
-            }
-
-            // Products data (same source as form.js)
-            const products = [
-                { id: 'p-1001', name: 'Flux Capacitor', averageRating: 4.5 },
-                { id: 'p-1002', name: 'Power Laces', averageRating: 4.7 },
-                { id: 'p-1003', name: 'Time Circuits', averageRating: 3.5 },
-                { id: 'p-1004', name: 'Low Voltage Reactor', averageRating: 3.9 },
-                { id: 'p-1005', name: 'Warp Equalizer', averageRating: 5.0 }
-            ];
-
-            // Look up product name by id
-            function findProductNameById(id) {
-                const found = products.find(p => p.id === id);
-                return found ? found.name : 'Unknown product';
-            }
-
-            // Build a friendly list string for features (checkboxes)
-            function buildFeaturesList(features) {
-                if (!features) return 'None';
-                if (Array.isArray(features)) return features.join(', ');
-                return features;
-            }
-
-            function incrementCounter() {
-                const key = 'w05_reviewCounter';
-                const raw = localStorage.getItem(key);
-                let n = raw ? parseInt(raw, 10) : 0;
-                n = Number.isNaN(n) ? 0 : n;
-                n += 1;
-                localStorage.setItem(key, String(n));
-                return n;
-            }
-
-            function getCounter() {
-                const key = 'w05_reviewCounter';
-                const raw = localStorage.getItem(key);
-                let n = raw ? parseInt(raw, 10) : 0;
-                n = Number.isNaN(n) ? 0 : n;
-                return n;
-            }
-
-            // When page loads: show submitted info and increment counter
-            document.addEventListener('DOMContentLoaded', function () {
-                const params = getQueryParams();
-                const productId = params.productId || '';
-                const productName = findProductNameById(productId);
-                const rating = params.rating || 'N/A';
-                const dateInstalled = params.dateInstalled || 'N/A';
-                const reviewText = params.reviewText || '';
-                const username = params.username || 'Anonymous';
-                // features may be present either as single string or array
-                // The query parsing function above collects duplicates into array
-                // But depending on browser encoding checkboxes may appear as "features" repeated
-                const features = params.features || null;
-
-                // Increment counter and display
-                const newCount = incrementCounter();
-                document.getElementById('reviewCount').textContent = newCount;
-
-                // Build markup using template literals (only template literals used)
-                const html = `
-        <div class="card">
-          <h3>Thank you, ${escapeHTML(username)} — your review was submitted!</h3>
-          <dl>
-            <dt>Product</dt><dd>${escapeHTML(productName)}</dd>
-            <dt>Overall rating</dt><dd>${escapeHTML(rating)}</dd>
-            <dt>Date of installation</dt><dd>${escapeHTML(dateInstalled)}</dd>
-            <dt>Useful features</dt><dd>${escapeHTML(buildFeaturesList(features))}</dd>
-            <dt>Written review</dt><dd>${escapeHTML(reviewText ? reviewText : '— No written review provided —')}</dd>
-          </dl>
-        </div>
-      `;
-
-                document.getElementById('confirmation').innerHTML = html;
-
-                // Reset button
-                document.getElementById('resetCounter').addEventListener('click', function () {
-                    localStorage.removeItem('w05_reviewCounter');
-                    document.getElementById('reviewCount').textContent = 0;
-                });
-            });
-
-            // Minimal HTML escaping
-            function escapeHTML(str) {
-                return String(str)
-                    .replace(/&/g, '&amp;')
-                    .replace(/</g, '&lt;')
-                    .replace(/>/g, '&gt;')
-                    .replace(/"/g, '&quot;')
-                    .replace(/'/g, '&#39;');
-            }
-        })();
-    </script>
 </body>
 
 </html>

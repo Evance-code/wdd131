@@ -1,82 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Product Review Form — W05</title>
-  <link rel="stylesheet" href="styles/cssstyles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="assets/logo-placeholder.svg" alt="Site logo" width="72" height="72" loading="lazy">
-      <h1>Tanzania Product Reviews</h1>
-    </div>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="form.html" class="active">Product Review</a>
-      <a href="review.html">Submission Confirmation</a>
-      <a href="#">References</a>
-    </nav>
-  </header>
+    <header>
+        <h1>Product Review</h1>
+    </header>
 
-  <main class="container">
-    <h2>W05 Assignment: Product Review Form</h2>
-    <p class="overview">Use this form to submit a product review. Fields marked <span class="required-star">*</span> are required.</p>
+    <main>
+        <form method="get" action="review.html">
+            <!-- Product Name -->
+            <label for="productName">Product Name</label>
+            <select id="productName" name="productName" required>
+                <option value="" disabled selected>Choose a Product ...</option>
+            </select>
 
-    <form id="reviewForm" action="review.html" method="get" autocomplete="on" novalidate>
-      <fieldset>
-        <legend>Product information</legend>
+            <!-- Overall Rating -->
+            <fieldset>
+                <legend>Overall Rating</legend>
+                <label><input type="radio" name="rating" value="1" required> ★</label>
+                <label><input type="radio" name="rating" value="2"> ★★</label>
+                <label><input type="radio" name="rating" value="3"> ★★★</label>
+                <label><input type="radio" name="rating" value="4"> ★★★★</label>
+                <label><input type="radio" name="rating" value="5"> ★★★★★</label>
+            </fieldset>
 
-        <label for="productSelect">Product Name <span class="required-star">*</span></label>
-        <select id="productSelect" name="productId" aria-required="true" required>
-          <option value="" disabled selected>Select a Product...</option>
-          <!-- Options populated by JS -->
-        </select>
+            <!-- Date -->
+            <label for="installDate">Date of Installation</label>
+            <input type="date" id="installDate" name="installDate" required>
 
-        <label>Overall Rating <span class="required-star">*</span></label>
-        <div class="rating-group" role="radiogroup" aria-label="Overall rating">
-          <!-- radio buttons 1..5 -->
-          <label><input type="radio" name="rating" id="rating1" value="1" required> 1</label>
-          <label><input type="radio" name="rating" id="rating2" value="2"> 2</label>
-          <label><input type="radio" name="rating" id="rating3" value="3"> 3</label>
-          <label><input type="radio" name="rating" id="rating4" value="4"> 4</label>
-          <label><input type="radio" name="rating" id="rating5" value="5"> 5</label>
-        </div>
+            <!-- Useful Features -->
+            <fieldset>
+                <legend>Which features did you find useful in the product?<br><em>(Check all that apply)</em></legend>
+                <label><input type="checkbox" id="durability" name="useful" value="Durability"> Durability</label>
+                <label><input type="checkbox" id="ease" name="useful" value="Ease of Use"> Ease of Use</label>
+                <label><input type="checkbox" id="performance" name="useful" value="Performance"> Performance</label>
+                <label><input type="checkbox" id="design" name="useful" value="Design"> Design</label>
+            </fieldset>
 
-        <label for="installDate">Date of Installation</label>
-        <input type="date" id="installDate" name="dateInstalled">
+            <!-- Written Review -->
+            <label for="review">Written Review <span class="optional">(Optional)</span></label>
+            <textarea id="review" name="review" rows="5"></textarea>
 
-        <fieldset class="features">
-          <legend>Useful Features (check all that apply)</legend>
-          <label><input type="checkbox" id="feat-durability" name="features" value="Durability"> Durability</label>
-          <label><input type="checkbox" id="feat-performance" name="features" value="Performance"> Performance</label>
-          <label><input type="checkbox" id="feat-design" name="features" value="Design"> Design</label>
-          <label><input type="checkbox" id="feat-support" name="features" value="Support"> Support</label>
-        </fieldset>
+            <!-- User Name -->
+            <label for="userName">Your Name <span class="optional">(Optional)</span></label>
+            <input type="text" id="userName" name="userName">
 
-        <label for="reviewText">Written Review</label>
-        <textarea name="reviewText" id="reviewText" rows="6" placeholder="Write your review here... (optional)"></textarea>
+            <!-- Submit -->
+            <input type="submit" value="Post Review">
+        </form>
+    </main>
 
-        <label for="username">Your Name (optional)</label>
-        <input type="text" id="username" name="username" placeholder="First and last name">
-
-      </fieldset>
-
-      <div class="form-actions">
-        <button type="submit" id="submitBtn" value="post-review">Post Review</button>
-      </div>
-    </form>
-
-    <section class="notes" aria-live="polite">
-      <h3>Notes</h3>
-      <p>We dynamically populate the product options using JavaScript and preserve accessibility and keyboard navigation order.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2025 WDD131 — Evance Kataaga <a href="references.html">References</a></p>
-  </footer>
-
-  <script src="scripts/app.js" defer></script>
+    <footer>
+        <p>©2024 🌍 Evance Hosea Katanga 🌍 Tanzania</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
+
 </html>

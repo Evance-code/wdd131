@@ -1,0 +1,97 @@
+:root {
+    --main-color: #3c003c;
+    --accent-color: #d8cedb;
+    --bg-color: #ffffff;
+    --text-color: #000;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--main-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+main {
+    max-width: 480px;
+    margin: 2rem auto;
+    background-color: var(--accent-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+label,
+legend {
+    font-weight: 600;
+    display: block;
+    margin-top: 1rem;
+}
+
+select,
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 0.3rem;
+    font-size: 1rem;
+}
+
+fieldset {
+    border: none;
+    margin-top: 1rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 0.4rem;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: white;
+    border: 2px solid var(--main-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.optional {
+    font-size: 0.9rem;
+    color: blue;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color: white;
+}
+
+footer p {
+    margin: 0.2rem;
+    font-size: 0.9rem;
+}
