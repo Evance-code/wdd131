@@ -6,38 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Confirmation</title>
     <link rel="stylesheet" href="styles/form.css">
-    <script defer>
-        const counterKey = "reviewCount";
-        let count = localStorage.getItem(counterKey) || 0;
-        count++;
-        localStorage.setItem(counterKey, count);
-
-        window.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("counter").textContent = count;
-            document.getElementById("lastModified").textContent =
-                "Last Modification: " + document.lastModified;
-        });
-    </script>
 </head>
 
 <body>
     <header>
-        <h1>Thank You for Your Submission!</h1>
+        <h1>Thank You for Your Review!</h1>
     </header>
 
     <main>
-        <section>
-            <p>Your product review has been submitted successfully.</p>
-            <p><strong>Total Reviews Submitted:</strong> <span id="counter"></span></p>
+        <section style="text-align:center;">
+            <h2>Your submission was successful ✅</h2>
+            <p>We appreciate your feedback.</p>
+            <p>Total Reviews Submitted: <strong id="reviewCount"></strong></p>
+            <a href="form.html" style="color: var(--main-color); font-weight: bold;">Submit another review</a>
         </section>
-
-        <a href="form.html" class="btn">Submit Another Review</a>
     </main>
 
     <footer>
-        <p>©2024 🌍 Evance Hosea Katanga 🌍 Tanzania</p>
-        <p id="lastModified"></p>
+        <p>©2024 🌸 Evance Hosea Katanga 🌍 Tanzania</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
     </footer>
+
+    <script>
+        // localStorage review counter
+        let count = Number(localStorage.getItem("reviewCount")) || 0;
+        count++;
+        localStorage.setItem("reviewCount", count);
+        document.getElementById("reviewCount").textContent = count;
+
+        // footer last modified
+        document.getElementById("lastModified").textContent = document.lastModified;
+    </script>
 </body>
 
 </html>
