@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Tanzania Talent Connect helps organizations in Tanzania find top executive talent through professional headhunting and recruitment services.">
+    <title>Tanzania Talent Connect</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <span class="green">Tanzania</span> <span class="yellow">Talent</span> <span class="black">Connect</span>
+        </div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav>
+            <ul id="navList">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#form">Apply</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section class="hero" id="home">
+        <img src="" alt="Professional networking in Tanzania" loading="lazy">
+        <div class="hero-text">
+            <h1>Connecting Tanzania’s Top Talent</h1>
+            <p>Empowering organizations through headhunting and leadership recruitment.</p>
+            <button id="learnMoreBtn">Learn More</button>
+        </div>
+    </section>
+
+    <main>
+        <section id="services" class="services">
+            <h2>Our Core Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Executive Search</h3>
+                    <p>We identify and recruit senior-level professionals who lead with vision.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Talent Mapping</h3>
+                    <p>Comprehensive analysis of talent landscapes to help organizations plan strategically.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Career Guidance</h3>
+                    <p>Helping professionals align their strengths with meaningful career opportunities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="form" class="application">
+            <h2>Apply to Join Our Network</h2>
+            <form id="applicationForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="career">Career Field:</label>
+                <select id="career" name="career" required>
+                    <option value="">Select...</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Engineering">Engineering</option>
+                </select>
+
+                <label for="message">Brief Bio:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Submit Application</button>
+            </form>
+            <p id="formMessage"></p>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; <span id="year"></span> Tanzania Talent Connect | All rights reserved.</p>
+        <a href="reference.html">References</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
